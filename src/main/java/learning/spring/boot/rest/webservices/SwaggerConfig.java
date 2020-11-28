@@ -15,12 +15,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-	public static final Contact DEFAULT_CONTACT = new Contact("", "", "");
-	public static final ApiInfo DEFAULT = new ApiInfo("My First Spring Boot API Documentation", "Api Documentation", "1.0", "urn:tos",
-	        DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", new ArrayList<>());
+	public static final Contact DEFAULT_CONTACT = new Contact("Romit Modi",
+	        "https://github.com/romitmodi/spring-boot-rest-webservice", "test@gmail.com");
+	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("First Spring Boot API Documentation",
+	        "First Spring Boot API description", "1.0", "urn:tos", DEFAULT_CONTACT, "Apache 2.0",
+	        "http://www.apache.org/licenses/LICENSE-2.0", new ArrayList<>());
 
 	@Bean
 	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2).apiInfo(ApiInfo.DEFAULT);
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(DEFAULT_API_INFO);
 	}
 }
