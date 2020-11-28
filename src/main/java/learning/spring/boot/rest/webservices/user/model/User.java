@@ -9,14 +9,20 @@ import javax.validation.constraints.Size;
 
 import org.springframework.hateoas.RepresentationModel;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description = "User Model description")
 public class User extends RepresentationModel<User> {
 
 	private Integer id;
 
 	@Size(min = 2, message = "Name must have atleast 2 character.")
+	@ApiModelProperty(value = "Value of name must be of atleast size 2")
 	private String name;
 
 	@PastOrPresent
+	@ApiModelProperty(value = "Date of birth can't be a futre date. it must be of past or present.")
 	private Date dateOfBirth;
 
 	private List<Post> postList;
